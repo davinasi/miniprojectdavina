@@ -21,7 +21,11 @@ class TokoLego:
     def ubah_produk(self, id_produk, kolom, nilai_baru):
         if id_produk in self.produk:
             if kolom in self.produk[id_produk]:
-                self.produk[id_produk][kolom] = nilai_baru
+                # Ubah hanya jika kolom harga atau jumlah
+                if kolom in ['harga', 'jumlah']:
+                    self.produk[id_produk][kolom] = float(nilai_baru)
+                else:
+                    self.produk[id_produk][kolom] = nilai_baru
                 print(f"Produk {id_produk} berhasil diupdate.")
             else:
                 print(f"Kolom '{kolom}' tidak ditemukan.")
@@ -37,11 +41,11 @@ class TokoLego:
 
     def menu_crud(self):
         # product dumpies
-        self.tambah_produk(60248, 'police station (743 pieces)', 'LEGO City', 1.945, 100)
-        self.tambah_produk(70668, 'LEGACY Jays Storm Fighter (460 pieces)', 'LEGO Ninjago', 1.850, 50)
-        self.tambah_produk(43206, 'Cinderella and Prince Charmings Castle (365 pieces)', 'LEGO Disney princess', 1.599, 30)
-        self.tambah_produk(43241, 'Rapunzels Tower & The Snuggly Duckling(345 pieces)', 'LEGO Disney princess', 1.599, 10)
-        self.tambah_produk(76401, 'Hogwarts Courtyard: Sirius Rescue Building Kit (345 Pieces)', 'LEGO Harry Potter', 971 , 30)
+        self.tambah_produk(60248, 'police station', 'LEGO City', 1.945, 100)
+        self.tambah_produk(70668, 'LEGACY Jays Storm Fighter', 'LEGO Ninjago', 1.850, 50)
+        self.tambah_produk(43206, 'Cinderella and Prince Charmings Castle', 'LEGO Disney princess', 1.599, 30)
+        self.tambah_produk(43241, 'Rapunzels Tower & The Snuggly Duckling', 'LEGO Disney princess', 1.599, 10)
+        self.tambah_produk(76401, 'Hogwarts Courtyard: Sirius Rescue Building Kit', 'LEGO Harry Potter', 971 , 30)
 
         while True:
             print("===============================================")
