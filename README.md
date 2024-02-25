@@ -1,6 +1,8 @@
 # miniprojectdavina
 Nama   : Davina putri izzati gautama
+
 NIM    : 2309116054
+
 Kelas  : Sistem Informasi B'23
 
 Saya membuat program dengan konsep sistem manajemen toko LEGO yang berisi implementasi CRUD, berikut output dari program saya:
